@@ -5,7 +5,13 @@ A generic controller for HTML5 presentations in browser.
 
 Usage
 -----
-Add your markup in `pres.jade`, and your css/js files in `public/` folder.
+Create or update the config.json file, add your files, and run `coffee bilbo`.
+### configuration file
+- __framework__ - the framework you wanna use (reveal or impress)
+- __markup__ - the file for the data of the presentation.
+- __style__ - the additional stylesheet for the presentation (optional)
+- __init__ - a file to init and configure the presentation
+- __key__ - a private key to access to the remote (optional)
 
 Routes
 ------
@@ -13,11 +19,12 @@ Routes
 - __/info__ - The ip to connect for each users who wants to see the presentation
 - __/remote__ - The remote
 
-Suported
---------
+Suported yet
+------------
 
 ### frameworks
 - ImpressJS
+- RevealJS
 
 ### markup
 - jade
