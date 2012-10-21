@@ -9,5 +9,5 @@
 #save{text-align:center;display:block;margin:20px auto}
 #save button{padding:20px}
 .remote-page button{text-transform:uppercase;font-family:'Dosis',sans-serif}
-#option-btn{color:rgba(255,255,255,0.6);position:absolute;top:10px;left:10px;cursor:pointer;}
+#option-btn{color:rgba(255,255,255,0.6);position:absolute;top:10px;left:10px;cursor:pointer;font-size:2em;}
 #option-btn:hover{color:rgba(255,255,255,0.9)}

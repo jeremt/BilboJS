@@ -3,11 +3,14 @@ extends layout
 //- A mixin to create a select from all posible keys
 mixin keys(id)
 	select(id=id, name=id)
-		for key in " abcdefghijklmnopqrstuvwxyz0123456789"
+		for key in " abcdefghijklmnopqrstuvwxyz0123456789⌫⇥↩↖↘⇟⇞*+-;=,./`[\\]\'"
 			option= key
+		option insert
+		option space
 
 block content
 	#option-btn ⌨
+	#close-btn(style='display:none') ☒
 	.remote-page(id='options', style='display:none')
 
 		h1 Options

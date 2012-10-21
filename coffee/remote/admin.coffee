@@ -68,15 +68,26 @@ display = ->
 
 setInterval display, 1000
 
-$('#option-btn').click ->
-	$('#options').show()
-	$('#option-btn').hide()
-	$('#remote').hide()
+options = $ '#options'
+remote = $ '#remote'
 
-$('#save > button').click
-	$('#options').hide()
-	$('#option-btn').show()
-	$('#remote').show()
+optionBtn = $ '#option-btn'
+closeBtn = $ '#close-btn'
+
+toRemote = ->
+	options.hide()
+	optionBtn.show()
+	remote.show()
+	closeBtn.hide()
+
+optionBtn.click ->
+	options.show()
+	remote.hide()
+	closeBtn.show()
+	optionBtn.hide()
+
+$('#save > button').click toRemote
+closeBtn.click toRemote
 
 $('#options > select').on 'change', ->
 	val = @[@.selectedIndex].value
