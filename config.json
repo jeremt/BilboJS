@@ -1,0 +1,6 @@
+{
+	"framework" : "impress",
+	"style"			: "pres/pres.css",
+	"markup"		: "pres/pres.jade",
+	"key"				: "test"
+}

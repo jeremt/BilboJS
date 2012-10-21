@@ -1,0 +1,4 @@
+#info{text-align:center;height:160px;top:50%;position:absolute;margin-top:-160px;width:100%;font-family:'Dosis',sans-serif}
+#info h1,#info h2{font-weight:normal}
+#info h2{color:rgba(0,0,0,0.5);font-size:50px}
+#info h1{font-size:70px}

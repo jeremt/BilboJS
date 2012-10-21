@@ -1,0 +1,11 @@
+{
+	"name": "nowjsAndExpressWebApp",
+	"version": "0.0.1",
+	"dependencies": {
+		"express": "*",
+		"jade": "*",
+		"node-markdown": "*",
+		"now": "*",
+		"jsdom": "*"
+	}
+}

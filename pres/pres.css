@@ -1,0 +1,42 @@
+@import url(http://fonts.googleapis.com/css?family=Dosis:200,400);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu Mono);
+body {
+	background: rgba(0, 0, 0, .9);
+	color: rgba(255, 255, 255, .5);
+	text-align: center;
+	font-weight: 200;	
+}
+
+h1 {
+	font-family: 'Dosis', sans-serif;
+	font-size: 70px;
+	font-weight: normal;
+	color: rgba(255, 255, 255, .8);
+}
+
+p, ul, ol {
+	font-family: 'Dosis', sans-serif;
+}
+
+ul {
+	list-style: square;
+}
+
+a {
+	background: none;
+	color: hsl(200, 50%, 60%);
+}
+
+a:hover {
+	background: none;
+	color: hsl(200, 50%, 40%);
+}
+
+code {
+	font-family: 'Ubuntu Mono', monospace;
+	font-size: .8em;
+	background: rgba(0, 0, 0, .5);
+	color: rgba(255, 255, 255, .8);
+	padding: 5px;
+	border-radius: 5px;
+}
