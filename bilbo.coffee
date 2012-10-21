@@ -105,8 +105,46 @@ app.post '/keys', (req, res) ->
 
 # Handle sockets manipulations with nowjs
 
+msg = """
+	The power of the remote is going to
+	end. The time has come... for the
+	dominion of BilboJS!
+
+"""
+
+gandalf = """
+                                       ,---.
+                                        /    |
+  The power of the remote is           /     |
+  going to end. The time has          /      |
+  come... for the dominion of        /       |
+  BilboJS!                      ___,'        |
+                              <  -'          :
+                               `-.__..--'``-,_\_
+                                  |o/ <o>` :,.)_`>
+                                  :/ `     ||/)
+                                  (_.).__,-` |\
+                                  /( `.``   `| :
+                                  \'`-.)  `  ; ;
+                                  | `       /-<
+                                  |     `  /   `.
+                  ,-_-..____     /|  `    :__..-'\
+                 /,'-.__\\  ``-./ :`      ;       \
+                 `\ `\  `\\  \ :  (   `  /  ,   `. \
+                   \` \   \\   |  | `   :  :     .\ \
+                    \ `\_  ))  :  ;     |  |      ): :
+                   (`-.-'\ ||  |\ \   ` ;  ;       | |
+                    \-_   `;;._   ( `  /  /_       | |
+                     `-.-.// ,'`-._\__/_,'         ; |
+                        \:: :     /     `     ,   /  |
+                         || |    (        ,' /   /   |
+                         ||                ,'   / SSt|
+
+"""
+
 server = app.listen app.port, ->
-	console.log "#{app.locals.title} app is running on #{app.port} :)"
+	console.log gandalf
+	console.log "\n\t#{app.locals.title} is running on http://localhost:#{app.port}\n"
 
 everyone = nowjs.initialize server
 
