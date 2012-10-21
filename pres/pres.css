@@ -1,7 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Dosis:200,400);
 @import url(http://fonts.googleapis.com/css?family=Ubuntu Mono);
 body {
-	background: rgba(0, 0, 0, .9);
+  background: #222;
+  background: -moz-radial-gradient(center, circle cover, #222 0%, #111 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #222), color-stop(100%, #111));
+  background: -webkit-radial-gradient(center, circle cover, #222 0%, #111 100%);
+  background: -o-radial-gradient(center, circle cover, #222 0%, #111 100%);
+  background: -ms-radial-gradient(center, circle cover, #222 0%, #111 100%);
+  background: radial-gradient(center, circle cover, #222 0%, #111 100%);
 	color: rgba(255, 255, 255, .5);
 	text-align: center;
 	font-weight: 200;	
