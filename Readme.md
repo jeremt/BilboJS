@@ -1,7 +1,7 @@
 BibloJS - One remote to rule them all
 =====================================
 
-A generic remote to controller HTML5 presentation in browser.
+A generic controller for HTML5 presentations in browser.
 
 Usage
 -----
