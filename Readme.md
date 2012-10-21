@@ -1,4 +1,4 @@
-BibloJS - One remote to rule them all
+BilboJS - One remote to rule them all
 =====================================
 
 A generic controller for HTML5 presentations in browser.
