@@ -22,3 +22,4 @@ Suported
 ### markup
 - jade
 - html
+- markdown

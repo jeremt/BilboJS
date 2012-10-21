@@ -8,7 +8,7 @@ BIN = "app.coffee"
 
 BUILD = "public/js/build.js"
 
-SRC	= "src"
+SRC	= "coffee"
 JS	= "public/js"
 
 STYL	= "styl"
