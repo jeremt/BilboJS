@@ -42,27 +42,27 @@ getMarkup = (path, cb) ->
 	type = type[type.length - 1]
 
 	if path is undefined
-		throw new Error 'Path must be defined.'
+		return cb new Error 'Path must be defined.'
 	fs.readFile __dirname + '/' + path, (err, data) ->
-		if err then throw err
+		if err then return cb err
 		str = data.toString()
 		switch type
 			when "html"
-				cb str
+				cb null, str
 			when "jade"
 				fn = jade.compile str
-				cb fn()
+				cb null, fn()
 			when "md", "markdown"
 				jsdom.env str, [zepto], (error, window) ->
-					if error then throw error
+					if error then return cb error
 					steps = window.$('.step')
 					for step in steps
 						window.$(step).html md window.$(step).html()
 					result = window.$('body').html()
 					window.close()
-					cb result
+					cb null, result
 			else
-				throw new TypeError "Invalid markup format."
+				cb new TypeError "Invalid markup format."
 
 restrited = (req, res, next) ->
 	if req.query.key is config.key or config.key is undefined
@@ -78,10 +78,14 @@ customKeys =
 
 ## default page, contain the presentation
 app.get '/', (req, res) ->
-	getMarkup config.markup, (markup) ->
-		res.render 'index',
-			markup: markup
-			framework: config.framework
+	getMarkup config.markup, (error, markup) ->
+		if error then throw error
+		getMarkup config.init, (err, init) ->
+			if err then throw err
+			res.render 'index',
+				markup: markup
+				init: init
+				framework: config.framework
 
 ## template stylesheet
 app.get '/pres.css', (req, res) ->
@@ -113,7 +117,7 @@ msg = """
 """
 
 gandalf = """
-                                       ,---.
+                                        ,---.
                                         /    |
   The power of the remote is           /     |
   going to end. The time has          /      |

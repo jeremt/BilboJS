@@ -1,9 +1,8 @@
 //- html content
 != markup
 //- stylesheet
-link(rel='stylesheet', href='/css/#{framework}.css')
+link(rel='stylesheet', href='/css/frameworks/#{framework}.css')
 link(rel='stylesheet', href='/pres.css')
 //- scripts
-script(src='/js/#{framework}.js')
-script
-	impress().init()
+script(src='/js/frameworks/#{framework}.js')
+!= init

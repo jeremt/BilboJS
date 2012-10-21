@@ -1,0 +1,6 @@
+{
+	"framework": "reveal",
+	"init": "examples/reveal/init.html",
+	"markup": "examples/reveal/pres.html",
+	"style": "examples/reveal/pres.css"
+}
