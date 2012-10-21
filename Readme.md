@@ -12,7 +12,6 @@ Create or update the `config.json` file, add your files, and run `coffee bilbo`.
 - __style__ - the additional stylesheet for the presentation (optional)
 - __init__ - a file to init and configure the presentation
 - __key__ - a private key to access to the remote (optional)
-Try with `config-base.json`, `config-reveal.json` or `config-impress.json`.
 
 Need inspiration?
 -----------------
