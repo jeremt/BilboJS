@@ -13,6 +13,10 @@ Create or update the config.json file, add your files, and run `coffee bilbo`.
 - __init__ - a file to init and configure the presentation
 - __key__ - a private key to access to the remote (optional)
 
+Need inspiration?
+-----------------
+Look at `config-base.json`, `config-reveal.json` or `config-impress.json`.
+
 Routes
 ------
 - __/__ - The presentation

@@ -1,0 +1,6 @@
+{
+	"framework" : "impress",
+	"markup"		: "examples/impress/pres.html",
+	"init"			: "examples/impress/init.html",
+	"key"				: "test"
+}
