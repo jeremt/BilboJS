@@ -28,10 +28,10 @@ grid = ->
 	size = winHeight - winHeight / 3
 	if winWidth > size
 		winWidth = size
-	btnSize = winWidth / 3 - 4
+	btnSize = winWidth / 3 - 6
 
 	$('body').css 'overflow', 'hidden'
-	$('#remote').css
+	$('.remote-page').css
 		width: winWidth
 		height: winHeight
 	$('#key-map').css
@@ -67,3 +67,18 @@ display = ->
 	$('#remote > h3').text 'slide ' + currentSlide
 
 setInterval display, 1000
+
+$('#option-btn').click ->
+	$('#options').show()
+	$('#option-btn').hide()
+	$('#remote').hide()
+
+$('#save > button').click
+	$('#options').hide()
+	$('#option-btn').show()
+	$('#remote').show()
+
+$('#options > select').on 'change', ->
+	val = @[@.selectedIndex].value
+	selector = '#' + $(@).prop('id').split('-')[1]
+	$(selector).html val

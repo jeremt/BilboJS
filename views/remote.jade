@@ -1,13 +1,37 @@
 extends layout
+
+//- A mixin to create a select from all posible keys
+mixin keys(id)
+	select(id=id, name=id)
+		for key in " abcdefghijklmnopqrstuvwxyz0123456789"
+			option= key
+
 block content
-	#remote
+	#option-btn ⌨
+	.remote-page(id='options', style='display:none')
+
+		h1 Options
+		form(method='post', action='/keys')
+			h3 Custom 1
+			mixin keys('key1')
+			h3 Custom 2
+			mixin keys('key2')
+			h3 Custom 3
+			mixin keys('key3')
+
+			#save
+				button(type='submit') save
+
+	.remote-page(id='remote')
+
 		h1 00:00
 		h2 00:00
 		h3 slide 1
+
 		#key-map
-			button  
-			button  
-			button  
+			button.custom#1= key1
+			button.custom#2= key2
+			button.custom#3= key3
 			button esc
 			button ↑
 			button ↲

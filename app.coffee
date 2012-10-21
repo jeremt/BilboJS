@@ -33,6 +33,7 @@ app.configure ->
 	@set 'views', __dirname + '/views'
 	@set 'view engine', 'jade'
 	@use express.static __dirname + '/public'
+	@use express.bodyParser()
 
 # Utils
 
@@ -70,24 +71,37 @@ restrited = (req, res, next) ->
 
 # Routes
 
+customKeys =
+	key1: " "
+	key2: " "
+	key3: " "
+
+## default page, contain the presentation
 app.get '/', (req, res) ->
 	getMarkup config.markup, (markup) ->
 		res.render 'index',
 			markup: markup
 			framework: config.framework
 
-## send the template stylesheet
+## template stylesheet
 app.get '/pres.css', (req, res) ->
 	if config.style isnt undefined
 		res.sendfile __dirname + '/' + config.style
 	else
 		res.send ''
 
+## info page, display ip address of the server
 app.get '/info', (req, res) ->
 	res.render 'info', url: "http://" + ip + ":4242"
 
+## remote to control the presentation
 app.get '/remote', restrited, (req, res) ->
-	res.render 'remote'
+	res.render 'remote', customKeys
+
+## update custom keys
+app.post '/keys', (req, res) ->
+	customKeys = req.body
+	res.redirect '/remote?key=' + config.key
 
 # Handle sockets manipulations with nowjs
 

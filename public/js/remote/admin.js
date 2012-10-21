@@ -37,9 +37,9 @@ grid = function() {
   if (winWidth > size) {
     winWidth = size;
   }
-  btnSize = winWidth / 3 - 4;
+  btnSize = winWidth / 3 - 6;
   $('body').css('overflow', 'hidden');
-  $('#remote').css({
+  $('.remote-page').css({
     width: winWidth,
     height: winHeight
   });
@@ -89,3 +89,16 @@ display = function() {
 };
 
 setInterval(display, 1000);
+
+$('#option-btn').click(function() {
+  $('#options').show();
+  $('#option-btn').hide();
+  return $('#remote').hide();
+});
+
+$('#options > select').on('change', function() {
+  var selector, val;
+  val = this[this.selectedIndex].value;
+  selector = '#' + $(this).prop('id').split('-')[1];
+  return $(selector).html(val);
+});
