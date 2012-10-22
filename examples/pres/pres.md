@@ -27,7 +27,7 @@ Add your markup in pres.jade, and your `css/js` files in `public/` folder.
 
 That's it :)
 ============
-Fork me on [github](https://github.com/JeremieT/BibloJS)!
+Fork me on [github](https://github.com/JeremieT/BilboJS)!
 
 </div>
 </div>

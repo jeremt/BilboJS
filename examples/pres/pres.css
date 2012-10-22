@@ -1,5 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Dosis:200,400);
 @import url(http://fonts.googleapis.com/css?family=Ubuntu Mono);
+
+::selection {
+	background: rgba(0, 0, 0, .6);
+}
+
 body {
   background: #222;
   background: -moz-radial-gradient(center, circle cover, #222 0%, #111 100%);

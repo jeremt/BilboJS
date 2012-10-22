@@ -23,7 +23,10 @@ exec "ifconfig | grep 'inet'", (stderr, stdout) ->
 	if stderr
 		console.log stderr
 	else
-		ip = /inet addr:(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/.exec(stdout.split('\n')[2])[1]
+		line = stdout.split('\n')[2]
+		if line
+			ip = /inet addr:(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/.exec(line)?[1]
+			ip ?= '127.0.0.1'
 
 # Express configuration
 
