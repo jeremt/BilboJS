@@ -3,6 +3,11 @@ BilboJS - One remote to rule them all
 
 A generic controller for HTML5 presentations in browser.
 
+Prerequisites
+-----
+
+You should have a version of NodeJS and the Coffee binary installed. Once you have cloned the repository, do a `npm install`.
+
 Usage
 -----
 Create or update the `config.json` file, add your files, and run `coffee bilbo`.
