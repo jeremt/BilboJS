@@ -23,7 +23,7 @@ Routes
 - __/info__ - The ip to connect for each users who wants to see the presentation
 - __/remote__ - The remote
 
-Suported yet
+Supported yet
 ------------
 
 ### frameworks
