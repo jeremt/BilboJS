@@ -41,6 +41,13 @@ option "-q", "--quiet", "Don't display compile informations"
 
 # tasks
 
+init_msg = "Install dependencies"
+
+task "init", init_msg, (options) ->
+	print init_msg, "blue"
+	init = exec "npm install"
+	output init
+
 minify_msg = "Minify your js file with require optimizer"
 
 task "minify", minify_msg, (options) ->
