@@ -1,6 +1,7 @@
 {
 	"name": "BilboJS",
 	"version": "0.0.2",
+  "main": "bilbo.coffee",
 	"dependencies": {
 		"express": "*",
 		"jade": "*",

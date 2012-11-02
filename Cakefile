@@ -16,7 +16,7 @@ CSS 	= "public/css"
 
 # utils
 
-print = (str, color) ->
+print = (str, color, bool = true) ->
 	swatches =
 		red			: "31m"
 		green		: "32m"
@@ -24,12 +24,16 @@ print = (str, color) ->
 		yellow	: "33m"
 
 	if swatches[color]
-		return console.log "\x1b[" + swatches[color] + str + " ✔\x1b[m"
+		str = "\x1b[" + swatches[color] + str
+	if bool
+		str += " ✔\x1b[m"
 	console.log str
 
 output = (proc) ->
 	proc.stdout.on "data", (data) -> 
-		console.log data.toString().trim()
+		print data.toString().trim(), false
+	proc.stderr.on "data", (data) ->
+		print data.toString().trim(), 'red', false
 
 # options
 
@@ -74,7 +78,7 @@ task "watch", watch_msg, (options) ->
 server_msg = "Starts server using nodemon #{BIN}"
 
 task "server", server_msg, (options) ->
-	nodemon = spawn "nodemon", [BIN]
+	nodemon = spawn "nodemon"
 	output nodemon
 
 dev_msg = "Starts server with nodemon and watch files for changes"
