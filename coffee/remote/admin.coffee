@@ -25,10 +25,8 @@ $('#key-map > button').on (if 'touchstart' in document then 'tap' else 'click'),
 grid = ->
 	winWidth = document.body.clientWidth
 	winHeight = window.innerHeight
-	size = winHeight - winHeight / 3
-	if winWidth > size
-		winWidth = size
-	btnSize = winWidth / 3 - 6
+	btnWidth = winWidth / 3 - 6
+	btnHeight = (winHeight - 100) / 3 - 6
 
 	$('body').css 'overflow', 'hidden'
 	$('.remote-page').css
@@ -38,10 +36,10 @@ grid = ->
 		position: 'absolute'
 		bottom: 0
 		width: winWidth
-		height: winWidth
+		height: winHeight - 100
 	$('#key-map > button').css
-		width: btnSize
-		height: btnSize
+		width: btnWidth
+		height: btnHeight
 		margin: 2
 	$('#key-map > button:last-child').css margin: 0
 
@@ -62,9 +60,9 @@ displayTime = (num) ->
 display = ->
 	currentTime++
 	currentSlideTime++
-	$('#remote > h1').text displayTime currentTime
-	$('#remote > h2').text displayTime currentSlideTime
-	$('#remote > h3').text 'slide ' + currentSlide
+	$('#remote > hgroup > h1').text displayTime currentTime
+	$('#remote > hgroup > h2').text displayTime currentSlideTime
+	$('#remote > hgroup > h3').text 'slide ' + currentSlide
 
 setInterval display, 1000
 
@@ -80,12 +78,13 @@ toRemote = ->
 	remote.show()
 	closeBtn.hide()
 
-optionBtn.click ->
+toOption = ->
 	options.show()
 	remote.hide()
 	closeBtn.show()
 	optionBtn.hide()
 
+optionBtn.click toOption
 $('#save > button').click toRemote
 closeBtn.click toRemote
 
