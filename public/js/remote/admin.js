@@ -96,15 +96,15 @@ optionBtn = $('#option-btn');
 closeBtn = $('#close-btn');
 
 toRemote = function() {
-  options.hide();
+  options.removeClass('visible').addClass('hidden');
+  remote.removeClass('hidden').addClass('visible');
   optionBtn.show();
-  remote.show();
   return closeBtn.hide();
 };
 
 toOption = function() {
-  options.show();
-  remote.hide();
+  options.removeClass('hidden').addClass('visible');
+  remote.removeClass('visible').addClass('hidden');
   closeBtn.show();
   return optionBtn.hide();
 };

@@ -39,3 +39,9 @@ Supported yet
 - jade
 - html
 - markdown
+
+TODO (Nice to have)
+-------------------
+- Automatic mode (change slide for a specific interval)
+- Synchro auto
+- Routes ??

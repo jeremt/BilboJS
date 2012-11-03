@@ -44,9 +44,9 @@ print = (str, color, bool = true) ->
 
 output = (proc) ->
 	proc.stdout.on "data", (data) -> 
-		print data.toString().trim(), false
+		print data.toString().trim(), 'white', false
 	proc.stderr.on "data", (data) ->
-		print data.toString().trim(), 'red', false
+		print data.toString().trim(), 'white', false
 
 # ┌────────────────────────────────────────────────────────────────────┐
 # │ Options                                                            │

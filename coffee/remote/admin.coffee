@@ -73,14 +73,18 @@ optionBtn = $ '#option-btn'
 closeBtn = $ '#close-btn'
 
 toRemote = ->
-	options.hide()
+	options.removeClass('visible').addClass 'hidden'
+	remote.removeClass('hidden').addClass 'visible'
+	# options.hide()
+	# remote.show()
 	optionBtn.show()
-	remote.show()
 	closeBtn.hide()
 
 toOption = ->
-	options.show()
-	remote.hide()
+	options.removeClass('hidden').addClass 'visible'
+	remote.removeClass('visible').addClass 'hidden'
+	# options.show()
+	# remote.hide()
 	closeBtn.show()
 	optionBtn.hide()
 

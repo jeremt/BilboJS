@@ -1,8 +1,31 @@
+#option-btn, #close-btn
+	color rgba(255, 255, 255, .6)
+	position absolute
+	top 10px
+	left 10px
+	cursor pointer
+	font-size 2em
+	&:hover
+		color rgba(255, 255, 255, .9)
+
 .remote-page
 	height 100%
 	color rgba(255, 255, 255, .7)
 	background rgba(0, 0, 0, .9)
 	margin auto
+
+	&.visible
+		display block
+
+	&.hidden
+		display none
+
+	// headers
+
+	hgroup
+		text-align center
+		h1, h2, h3
+			display inline
 
 	h1, h2, h3
 		font-family 'Dosis', sans-serif
@@ -20,6 +43,8 @@
 		font-size 42px
 		color rgba(255, 255, 255, .2)
 
+	// buttons
+
 	button
 		cursor pointer
 		background rgba(0, 0, 0, .5)
@@ -34,6 +59,11 @@
 			background rgba(255, 255, 255, .5)
 			color rgba(0, 0, 0, .8)
 
+	button
+		text-transform uppercase
+		font-family 'Dosis', sans-serif
+
+
 	select
 		background rgba(255, 255, 255, .4)
 		border none
@@ -41,29 +71,11 @@
 		width 50%
 		display block
 		margin auto
-	hgroup
+
+	#save
 		text-align center
-		h1, h2, h3
-			display inline
+		display block
+		margin 20px auto
 
-#save
-	text-align center
-	display block
-	margin 20px auto
-
-#save button
-	padding 20px
-
-.remote-page button
-	text-transform uppercase
-	font-family 'Dosis', sans-serif
-
-#option-btn, #close-btn
-	color rgba(255, 255, 255, .6)
-	position absolute
-	top 10px
-	left 10px
-	cursor pointer
-	font-size 2em
-	&:hover
-		color rgba(255, 255, 255, .9)
+	#save button
+		padding 20px
