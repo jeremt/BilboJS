@@ -1,6 +1,8 @@
+@import url("http://fonts.googleapis.com/css?family=Dosis:200,400");
+body{margin:0;padding:0;background:rgba(0,0,0,0.9)}
 #option-btn,#close-btn{color:rgba(255,255,255,0.6);position:absolute;top:10px;left:10px;cursor:pointer;font-size:2em;}
 #option-btn:hover,#close-btn:hover{color:rgba(255,255,255,0.9)}
-.remote-page{height:100%;color:rgba(255,255,255,0.7);background:rgba(0,0,0,0.9);margin:auto;}
+.remote-page{height:100%;color:rgba(255,255,255,0.7);margin:auto;}
 .remote-page.visible{display:block}
 .remote-page.hidden{display:none}
 .remote-page hgroup{text-align:center;}
