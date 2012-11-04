@@ -4,12 +4,13 @@ BilboJS - One remote to rule them all
 A generic controller for HTML5 presentations in browser.
 
 Prerequisites
------
+-------------
 
 You should have a version of NodeJS and the Coffee binary installed. Once you have cloned the repository, do a `npm install`.
 
-Usage
------
+How it works?
+-------------
+
 Create or update the `config.json` file, add your files, and run `coffee bilbo`.
 ### configuration file
 - __framework__ - the framework you wanna use (reveal or impress)
@@ -18,15 +19,24 @@ Create or update the `config.json` file, add your files, and run `coffee bilbo`.
 - __init__ - a file to init and configure the presentation
 - __key__ - a private key to access to the remote (optional)
 
-Need inspiration?
------------------
-Look at `config-base.json`, `config-reveal.json` or `config-impress.json`.
+How to use?
+-----------
+
+Go to `http://localhost:4242` in your favourite browser to see presentation.
+
+_You have to be on the same Wifi._
 
 Routes
 ------
+
 - __/__ - The presentation
 - __/info__ - The ip to connect for each users who wants to see the presentation
 - __/remote__ - The remote
+
+Need inspiration?
+-----------------
+
+Look at `config-base.json`, `config-reveal.json` or `config-impress.json`.
 
 Supported yet
 ------------
@@ -40,8 +50,9 @@ Supported yet
 - html
 - markdown
 
-TODO (Nice to have)
--------------------
+Nice to have
+------------
+
 - Automatic mode (change slide for a specific interval)
 - Synchro auto
 - Routes ??

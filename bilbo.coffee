@@ -70,10 +70,26 @@ getMarkup = (path, cb) ->
 			else
 				cb new TypeError "Invalid markup format."
 
+getNbSlides = (path, cb) ->
+	type = config.markup.split '.'
+	type = type[type.length - 1]
+
+	if path is undefined
+		return cb new Error 'Path must be defined.'
+	fs.readFile __dirname + '/' + path, (err, data) ->
+		if err then return cb err
+		str = data.toString()
+		if type is "jade"
+			str = jade.compile(str)()
+		jsdom.env str, [zepto], (error, window) ->
+			if error then return cb error
+			cb null, window.$('.step').length
+
 restrited = (req, res, next) ->
 	if req.query.key is config.key or config.key is undefined
 		next()
-	res.redirect '/'
+	else
+		res.redirect '/'
 
 # Routes
 
@@ -106,7 +122,11 @@ app.get '/info', (req, res) ->
 
 ## remote to control the presentation
 app.get '/remote', restrited, (req, res) ->
-	res.render 'remote', customKeys
+	getNbSlides config.markup, (err, nb) ->
+		if err then throw err
+		res.render 'remote',
+			keys: customKeys
+			nbSlides: nb
 
 ## update custom keys
 app.post '/keys', (req, res) ->

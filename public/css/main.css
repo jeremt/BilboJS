@@ -16,7 +16,9 @@
 .remote-page select{background:rgba(255,255,255,0.4);border:none;padding:10px;width:50%;display:block;margin:auto}
 .remote-page #save{text-align:center;display:block;margin:20px auto}
 .remote-page #save button{padding:20px}
-#info{text-align:center;height:160px;top:50%;position:absolute;margin-top:-160px;width:100%;font-family:'Dosis',sans-serif}
+@media screen and (max-width: 550px){h1,h2,h3{font-size:2.2em !important;line-height:3em}
+#option-btn,#close-btn{font-size:1em}
+}#info{text-align:center;height:160px;top:50%;position:absolute;margin-top:-160px;width:100%;font-family:'Dosis',sans-serif}
 #info h1,#info h2{font-weight:normal}
 #info h2{color:rgba(0,0,0,0.5);font-size:50px}
 #info h1{font-size:70px}

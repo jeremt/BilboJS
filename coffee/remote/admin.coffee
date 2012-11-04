@@ -1,26 +1,69 @@
-# init infos
 
-currentSlide = 1
-currentTime = 0
-currentSlideTime = 0
+# Dashboard display some info about the pres
+# - the running time
+# - the running time of the current slide
+# - the current slide index
 
-# send the command to the server
+class Dashboard
+
+	_slide = 1
+	_max = null
+	_time = 0
+	_timeSlide = 0
+
+	constructor: ->
+		_max = $('#remote > hgroup > h3').text().split('/')[1]
+		console.log _max
+
+	_digits = (num) ->
+		if num < 10 then '0' + num else num
+
+	_display = (num) ->
+		m = ~~(num / 60)
+		s = ~~(num % 60)
+		_digits m + ':' + _digits s
+
+	prev: ->
+		_timeSlide = 0
+		_slide--
+		if _slide < 1
+			_slide = _max
+
+	next: ->
+		_timeSlide = 0
+		_slide++
+		if _slide > _max
+			_slide = 1
+
+	step: ->
+		_time++
+		_timeSlide++
+		$('#remote > hgroup > h1').text _display _time
+		$('#remote > hgroup > h2').text _display _timeSlide
+		$('#remote > hgroup > h3').text _slide + '/' + _max
+	run: ->
+		setInterval @step, 1000
+
+dashboard = new Dashboard
+
+dashboard.run()
+
+# Send the command to the server
 
 getKey = ->
 	key = $(@).html()
 	switch key
 		when '→', '↓'
-			currentSlide++
-			currentSlideTime = 0
+			dashboard.next()
 		when '←', '↑'
-			currentSlide--
-			currentSlideTime = 0
+			dashboard.prev()
 	if key and key isnt ' '
 		now.getKey key
 
-$('#key-map > button').on (if 'touchstart' in document then 'tap' else 'click'), getKey
+evt = if 'touchstart' in document then 'tap' else 'click'
+$('#key-map > button').on evt, getKey
 
-# add fluid grid design
+# Add fluid grid design
 
 grid = ->
 	winWidth = document.body.clientWidth
@@ -47,24 +90,7 @@ $ grid
 $('body').on 'change', grid
 $(window).on 'resize', grid
 
-# add some info about the presentations
-
-displayDigit = (num) ->
-	if num < 10 then '0' + num else num
-
-displayTime = (num) ->
-	m = ~~(num / 60)
-	s = ~~(num % 60)
-	displayDigit(m) + ':' + displayDigit(s)
-
-display = ->
-	currentTime++
-	currentSlideTime++
-	$('#remote > hgroup > h1').text displayTime currentTime
-	$('#remote > hgroup > h2').text displayTime currentSlideTime
-	$('#remote > hgroup > h3').text 'slide ' + currentSlide
-
-setInterval display, 1000
+# Show/hide options
 
 options = $ '#options'
 remote = $ '#remote'
@@ -75,24 +101,15 @@ closeBtn = $ '#close-btn'
 toRemote = ->
 	options.removeClass('visible').addClass 'hidden'
 	remote.removeClass('hidden').addClass 'visible'
-	# options.hide()
-	# remote.show()
 	optionBtn.show()
 	closeBtn.hide()
 
 toOption = ->
 	options.removeClass('hidden').addClass 'visible'
 	remote.removeClass('visible').addClass 'hidden'
-	# options.show()
-	# remote.hide()
 	closeBtn.show()
 	optionBtn.hide()
 
 optionBtn.click toOption
-$('#save > button').click toRemote
 closeBtn.click toRemote
-
-$('#options > select').on 'change', ->
-	val = @[@.selectedIndex].value
-	selector = '#' + $(@).prop('id').split('-')[1]
-	$(selector).html val
+$('#save > button').click toRemote
