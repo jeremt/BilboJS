@@ -1,6 +1,7 @@
 {
 	"framework" : "impress",
-	"markup"		: "examples/impress/pres.html",
-	"init"			: "examples/impress/init.html",
-	"key"				: "test"
+	"style"			: "examples/pres/pres.css",
+	"markup"		: "examples/pres/pres.jade",
+	"init"			: "examples/pres/init.jade",
+	"key"				: "mellon"
 }

@@ -30,6 +30,10 @@ p, ul, ol {
 }
 
 ul {
+	text-align: left;
+}
+
+ul {
 	list-style: square;
 }
 

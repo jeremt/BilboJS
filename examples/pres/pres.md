@@ -1,5 +1,5 @@
 
-<!-- Warning, don't use tabulations too compile markdown correctly -->
+<!-- Warning: don't use tabulations too compile markdown correctly -->
 
 <div id="impress">
 <div class="step" data-x="-1000" data-y="-1500">
@@ -18,16 +18,18 @@ A generic remote to controller HTML5 presentation in browser.
 </div>
 <div class="step" data-x="1000" data-y="-1500">
 
-Usage
-=====
-Add your markup in pres.jade, and your `css/js` files in `public/` folder.
+How it works?
+=============
+- Configure your `config.json` with the framework and the files
+- Create the markup/css/init files
+- Run `coffee bilbo`, and go to `http://localhost:4242` in your favorite browser!
 
 </div>
 <div class="step" data-x="0" data-y="0" data-scale="4">
 
 That's it :)
 ============
-Fork me on [github](https://github.com/JeremieT/BilboJS)!
+[Fork me](https://github.com/JeremieT/BilboJS) on github!
 
 </div>
 </div>

@@ -16,6 +16,9 @@ config 	= require './config'
 app = express()
 
 # Get the ip address of the server
+# console.log process
+# os = require 'os'
+# console.log 'OS: ', os.networkInterfaces()
 
 ip = '127.0.0.1'
 
