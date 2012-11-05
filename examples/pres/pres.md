@@ -3,20 +3,23 @@
 <div id="impress">
 <div class="step" data-x="-1000" data-y="-1500">
 
-# BilboJS - Markdown
+BilboJS - Markdown
+==================
 One remote to rule them all.
 
 </div>
 <div class="step" data-x="0" data-y="-1500">
 
-# What is it?
+What is it?
+===========
 
 A generic remote to controller HTML5 presentation in browser.
 
 </div>
 <div class="step" data-x="1000" data-y="-1500">
 
-# How it works?
+How it works?
+=============
 
 - Configure your `config.json` with the framework and the files
 - Create the markup/css/init files
@@ -25,7 +28,8 @@ A generic remote to controller HTML5 presentation in browser.
 </div>
 <div class="step" data-x="0" data-y="0" data-scale="4">
 
-# That's it :)
+That's it :)
+============
 
 [Fork me](https://github.com/JeremieT/BilboJS) on github!
 
