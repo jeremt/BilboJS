@@ -1,6 +1,4 @@
 
-<!-- Warning: don't use tabulations too compile markdown correctly -->
-
 <div id="impress">
 <div class="step" data-x="-1000" data-y="-1500">
 
